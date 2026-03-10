@@ -1,8 +1,30 @@
 {
   "name": "uside-extensions",
-  "displayName": "uside-extensions",
-  "description": "My first extension",
+  "displayName": "Uside React Snippets",
+  "description": "Useful React snippets for JavaScript React developers — hooks, router, components, exercises.",
   "version": "0.0.1",
+  "publisher": "trantuanhung1209",
+  "author": {
+    "name": "Tran Tuan Hung"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trantuanhung1209/uside-extensions.git"
+  },
+  "homepage": "https://github.com/trantuanhung1209/uside-extensions#readme",
+  "bugs": {
+    "url": "https://github.com/trantuanhung1209/uside-extensions/issues"
+  },
+  "keywords": [
+    "react",
+    "snippets",
+    "hooks",
+    "usestate",
+    "useeffect",
+    "router",
+    "javascript",
+    "jsx"
+  ],
   "engines": {
     "vscode": "^1.110.0"
   },
