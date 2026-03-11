@@ -3,7 +3,7 @@
   "displayName": "Uside React Snippets",
   "description": "Useful React snippets for JavaScript React developers — hooks, router, components, exercises.",
   "version": "0.0.1",
-  "publisher": "trantuanhung1209",
+  "publisher": "Hune12",
   "author": {
     "name": "Tran Tuan Hung"
   },
@@ -26,7 +26,7 @@
     "jsx"
   ],
   "engines": {
-    "vscode": "^1.110.0"
+    "vscode": "^1.60.0"
   },
   "categories": [
     "Snippets"
