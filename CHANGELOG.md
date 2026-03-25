@@ -8,6 +8,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - No changes yet.
 
+## [0.0.4] - 2026-03-22
+
+- Add comprehensive Jest + React Testing Library setup guide to README.
+
 ## [0.0.3] - 2026-03-20
 
 - Add new hook snippets: `hook_useCounter`, `hook_fetch_users`.
