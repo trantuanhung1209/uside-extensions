@@ -5,7 +5,7 @@ This extension provides useful React snippets for JavaScript React developers.
 ## Features
 
 Snippets are organized by prefix group:
-Current set includes **36 snippet prefixes**.
+Current set includes **21 snippet prefixes**.
 
 ---
 
@@ -36,19 +36,10 @@ Current set includes **36 snippet prefixes**.
 
 ---
 
-### `route_` — Route Page Components
-
-| Prefix | Output | Description |
-|---|---|---|
-| `route_dashboard` | `<Dashboard>` with `<Link>` nav + `<Outlet />` | Dashboard layout dùng React Router Outlet |
-
----
-
 ### `task_` — Components & Utilities
 
 | Prefix | Output | Description |
 |---|---|---|
-| `task_rfc` | `const ComponentName = () => { ... }` | React functional component |
 | `task_searchfilter` | `data.filter(item => item.name.includes(keyword))` | Lọc danh sách theo từ khóa |
 | `task_pagination` | `currentItems = data.slice(startIndex, ...)` | Tính toán phân trang |
 | `task_formhandle` | `const [form, setForm] = useState({...})` | Xử lý form với handleChange |
@@ -59,30 +50,10 @@ Current set includes **36 snippet prefixes**.
 
 | Prefix | Output | Description |
 |---|---|---|
-| `ex_todo_reducer` | Component todo CRUD | Todo list dùng `useReducer` (ADD / TOGGLE / DELETE) |
 | `ex_theme` | Component theme toggle | Theme Manager dùng `Context API` (light/dark mode) |
-| `ex_cart` | Component shopping cart | Shopping cart dùng `Context + useReducer` + localStorage |
-| `ex_fetch_users` | Component fetch users | Fetch danh sách users từ API có loading / error state |
-| `ex_search_filter` | Component search & filter | Lọc danh sách users theo từ khóa dùng `useState` |
-| `ex_counter_state` | Component counter state object | Counter dùng `useState` với object `{ count, step }` |
-| `ex_counter_reducer` | Component counter reducer | Counter dùng `useReducer` với action `inc/dec/reset/setStep` |
-| `ex_memo_demo` | Component React.memo demo | Minh họa tránh re-render không cần thiết với `React.memo` |
-| `ex_todo_performance` | Component todo + perf | Todo CRUD với `memo` + `useCallback` tối ưu re-render (local state) |
-| `ex_todo_performance_api` | Component todo + perf + API | Todo CRUD với `memo` + `useCallback` + gọi MockAPI thực tế |
-| `ex_usememo_search` | Component useMemo + fetch users | Tìm kiếm users với `useMemo` và custom hook |
-| `ex_stopwatch` | Component đồng hồ bấm giờ | Stopwatch dùng `useState` + `useRef` + `useEffect` có ghi lap |
-| `ex_userposts_searchfilter_memo` | Component user posts filter (memo) | Search + filter users/posts tối ưu với `useMemo` |
 | `ex_userposts_test` | RTL test suite template | Mẫu test với Jest + React Testing Library |
 | `ex_restaurant` | Component restaurant search/filter | Search + filter nhà hàng với `useMemo` + `useCallback` + `useRef` |
 | `ex_restaurant_components` | Optimized restaurant app | Tách component + tối ưu render bằng `memo` + hooks |
-
----
-
-### `rcc_` — Render Optimization Demos
-
-| Prefix | Output | Description |
-|---|---|---|
-| `rcc_usecallback_demo` | Component `useCallback` + `memo` | Demo chống re-render dư thừa bằng `useCallback` |
 
 ---
 
@@ -111,30 +82,15 @@ hook_useCounter            → custom hook counter (inc/dec/reset)
 hook_fetch_users           → custom hook fetch users + loading/error
 
 router_layout         → createBrowserRouter full setup
-route_dashboard       → Dashboard với Link + Outlet
 
-task_rfc              → React Functional Component
 task_formhandle       → form state + handleChange
 task_pagination       → logic tính currentItems
+task_searchfilter     → filter list theo keyword
 
-ex_todo_reducer           → Bài tập Todo với useReducer
 ex_theme                  → Bài tập Theme với Context API
-ex_cart                   → Bài tập Shopping Cart (Context + Reducer)
-ex_fetch_users            → Bài tập Fetch API có loading/error
-ex_search_filter          → Bài tập Search & Filter danh sách
-ex_counter_state          → Bài tập Counter bằng useState object
-ex_counter_reducer        → Bài tập Counter bằng useReducer
-ex_memo_demo              → Bài tập React.memo tránh re-render dư
-ex_todo_performance       → Bài tập Todo tối ưu hiệu năng (local)
-ex_todo_performance_api   → Bài tập Todo tối ưu + CRUD thực với MockAPI
-ex_usememo_search         → Bài tập Search users với useMemo
-ex_stopwatch              → Bài tập Đồng hồ bấm giờ (useRef interval)
-ex_userposts_searchfilter_memo → User posts search + filter tối ưu bằng useMemo
 ex_userposts_test         → Template test UserPosts với Jest + RTL
 ex_restaurant             → Restaurant search/filter với useMemo + useCallback + useRef
 ex_restaurant_components  → Optimized restaurant app (memo + hooks)
-
-rcc_usecallback_demo      → Demo useCallback + memo tối ưu render
 user_posts_filter_search  → User posts filter + search với useEffect
 ```
 
@@ -737,3 +693,118 @@ expect(element).toBeDisabled();                     // From jest-dom
 ---
 
 **Setup hoàn tất! Giờ bạn sẵn sàng test components. 🚀**
+
+---
+
+# 🍳 Đề kiểm tra React - Recipe Book
+
+## Hướng dẫn chạy
+
+```bash
+npm install
+npm run dev
+```
+
+## Cấu trúc thư mục
+
+```
+src/
+ ├── components/
+ │    ├── RecipeCard.jsx       (Câu 1 - memo, props)
+ │    └── SearchBox.jsx        (Câu 1 - useRef)
+ ├── context/
+ │    └── ThemeContext.jsx     (Câu 4 - useContext, theme sáng/tối)
+ ├── hooks/
+ │    ├── useFetch.js          (Câu 4 - custom hook)
+ │    └── useLocalStorage.js   (đã viết sẵn - dùng cho Câu 9)
+ ├── pages/
+ │    ├── HomePage.jsx         (Câu 6 - useMemo)
+ │    ├── RecipeListPage.jsx   (Câu 2, 4, 6, 8)
+ │    ├── RecipeDetailPage.jsx (Câu 5, 8)
+ │    ├── AddRecipePage.jsx    (Câu 7 - useReducer + mảng động)
+ │    ├── FavoritesPage.jsx    (Câu 6 - useMemo lọc favorite)
+ │    └── LoginPage.jsx        (Câu 9)
+ ├── services/
+ │    └── recipeApi.js         (axios)
+ ├── store/
+ │    └── atoms.js             (Câu 3 - Recoil)
+ ├── App.jsx                   (Câu 9, 10 - routes, ProtectedRoute)
+ └── main.jsx
+```
+
+## Cấu trúc dữ liệu 1 công thức
+
+```json
+{
+	"id": 1,
+	"title": "Phở bò",
+	"difficulty": "medium",
+	"cookTime": 180,
+	"servings": 4,
+	"ingredients": ["500g bánh phở", "1kg xương bò", "..."],
+	"description": "Bước 1: ...\nBước 2: ...",
+	"favorite": false,
+	"image": "https://..."
+}
+```
+
+`difficulty`: `"easy"` | `"medium"` | `"hard"`
+
+## API
+
+Tạo mockapi.io với resource `recipes` rồi thay `API_URL` trong `src/services/recipeApi.js`.
+
+## Nộp bài
+
+Nén thư mục (KHÔNG kèm `node_modules`) thành `<MSSV>_<HoTen>.zip` và nộp lên LMS.
+
+---
+
+# 📚 Đề kiểm tra React - My Book Library
+
+## Hướng dẫn cài đặt
+
+```bash
+npm install
+npm run dev
+```
+
+## Cấu trúc thư mục
+
+```
+src/
+ ├── components/
+ │    ├── BookItem.jsx       (Câu 1 - memo, props)
+ │    └── SearchBox.jsx      (Câu 1 - useRef)
+ ├── hooks/
+ │    └── useLocalStorage.js (Câu 4 - custom hook)
+ ├── pages/
+ │    ├── HomePage.jsx       (Câu 6 - useMemo)
+ │    ├── BookListPage.jsx   (Câu 2, 6, 8 - fetch, filter, delete)
+ │    ├── BookDetailPage.jsx (Câu 5 - useParams)
+ │    ├── AddBookPage.jsx    (Câu 7 - useReducer)
+ │    └── LoginPage.jsx      (Câu 4, 9 - login)
+ ├── services/
+ │    └── bookApi.js         (axios)
+ ├── store/
+ │    └── atoms.js           (Recoil)
+ ├── App.jsx                 (Câu 10 - routes)
+ └── main.jsx
+```
+
+## Chuẩn bị API
+
+Tạo mockapi.io với resource `books` có schema:
+- id (number)
+- title (string)
+- author (string)
+- category (string)
+- status (string)    // 'read' | 'reading' | 'unread'
+- description (string)
+
+Sau đó thay `API_URL` trong `src/services/bookApi.js`.
+
+## Nộp bài
+
+Nén toàn bộ thư mục (KHÔNG kèm node_modules) thành file zip.
+Đặt tên: `<MSSV>_<HoTen>.zip`
