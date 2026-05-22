@@ -758,6 +758,26 @@ Tạo mockapi.io với resource `recipes` rồi thay `API_URL` trong `src/servic
 
 Nén thư mục (KHÔNG kèm `node_modules`) thành `<MSSV>_<HoTen>.zip` và nộp lên LMS.
 
+## Mapping Snippet -> File (Recipe Book)
+
+| File | Snippet Prefix |
+|---|---|
+| `src/components/RecipeCard.jsx` | `comp_recipe_card` |
+| `src/components/SearchBox.jsx` | `comp_search_box` |
+| `src/context/ThemeContext.jsx` | `ctx_theme_provider` |
+| `src/hooks/useFetch.js` | `hook_useFetch` |
+| `src/hooks/useLocalStorage.js` | `hook_useLocalStorage` |
+| `src/pages/HomePage.jsx` | `page_home_stats` |
+| `src/pages/RecipeListPage.jsx` | `page_recipe_list` |
+| `src/pages/RecipeDetailPage.jsx` | `page_recipe_detail` |
+| `src/pages/AddRecipePage.jsx` | `page_add_recipe` |
+| `src/pages/FavoritesPage.jsx` | `page_favorites` |
+| `src/pages/LoginPage.jsx` | `page_login` |
+| `src/services/recipeApi.js` | `svc_recipe_api` |
+| `src/store/atoms.js` | `store_atoms` |
+| `src/App.jsx` | `app_recipe_routes` |
+| `src/main.jsx` | `main_recipe_app` |
+
 ---
 
 # 📚 Đề kiểm tra React - My Book Library
@@ -808,3 +828,20 @@ Sau đó thay `API_URL` trong `src/services/bookApi.js`.
 
 Nén toàn bộ thư mục (KHÔNG kèm node_modules) thành file zip.
 Đặt tên: `<MSSV>_<HoTen>.zip`
+
+## Mapping Snippet -> File (My Book Library)
+
+| File | Snippet Prefix |
+|---|---|
+| `src/components/BookItem.jsx` | `comp_book_item` |
+| `src/components/SearchBox.jsx` | `comp_book_searchbox` |
+| `src/hooks/useLocalStorage.js` | `hook_useLocalStorage_student` |
+| `src/pages/HomePage.jsx` | `page_book_home` |
+| `src/pages/BookListPage.jsx` | `page_book_list` |
+| `src/pages/BookDetailPage.jsx` | `page_book_detail` |
+| `src/pages/AddBookPage.jsx` | `page_add_book` |
+| `src/pages/LoginPage.jsx` | `page_book_login` |
+| `src/services/bookApi.js` | `svc_book_api` |
+| `src/store/atoms.js` | `store_book_atoms` |
+| `src/App.jsx` | `app_book_routes` |
+| `src/main.jsx` | `main_book_app` |
