@@ -2,7 +2,7 @@
   "name": "uside-extensions",
   "displayName": "Uside React Snippets",
   "description": "Useful React snippets for JavaScript React developers — hooks, router, components, exercises.",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "publisher": "Hune12",
   "author": {
     "name": "Tran Tuan Hung"
@@ -35,6 +35,10 @@
     "snippets": [
       {
         "language": "javascriptreact",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
+        "language": "typescriptreact",
         "path": "./snippets/snippets.code-snippets"
       }
     ]
